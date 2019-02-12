@@ -162,23 +162,54 @@ SFIRSIT !!!
 
 
            */
-            Child1 child1 = new Child1();
-            IBase iBase = child1;
+            //  Child1 iBase = new Child1();
+            ////  IBase iBase = child1;
 
-            Console.WriteLine();
+            //  Console.WriteLine();
 
-            iBase.GetMesage();
-            iBase.ShowMessage();
-            iBase.ShowMessage1();
-            a = iBase.MyProperty;
-            iBase.MyProperty = a;
+            //  iBase.GetMesage();
+            //  iBase.ShowMessage();
+            //  iBase.ShowMessage1();
+            //  a = iBase.MyProperty;
+            //  iBase.MyProperty = a;
 
-            Console.WriteLine();
+            //  Console.WriteLine();
 
 
 
 
             /*
+             * 
+             * This is : Child1 :: child1StaticFildReadOnly : Static : ReadOnly :
+This is : Child1 :: child1StaticFild : Static :
+This is : Child1 :: Constructor :: Static :
+This is : Child1 :: Constructor :: child1StaticFildReadOnly :: initialization :
+This is : Child1 :: child1Fild :
+This is : Child1 :: child1FildReadOnly : ReadOnly :
+This is : Base :: baseFild : Static : ReadOnly :
+This is : Base :: baseFild : Static :
+This is : Base :: Constructor :: Static :
+This is : Base :: Constructor :: baseStaticFildReadOnly :: initialization :
+This is : Base :: baseFild :
+This is : Base :: baseFild : ReadOnly :
+Call from Child1
+This is : Child1 :: Constructor ::
+This is : Child1 :: Constructor :: child1FildReadOnly :: initialization :
+
+This is : Child1 :: GetMessage :virtual : new :
+This is : Child1 :: ShowMessage :: new :
+This is : Child1 :: ShowMessage :: Overload : override : DefaultMessage :
+Tis is : Child1 :: GetProprety : override :
+Tis is : Child1 :: SetProprety : override :
+
+SFIRSIT !!!
+
+
+
+             * 
+             * 
+             * INTERFATA 
+             * 
             This is : Child1 :: child1StaticFildReadOnly : Static : ReadOnly :
 This is : Child1 :: child1StaticFild : Static :
 This is : Child1 :: Constructor :: Static :
@@ -203,18 +234,18 @@ Tis is : Child1 :: SetProprety : override :
 
 
            */
-            //Child2 child1 = new Child2();
-            //IBase iBase = child1;
+            Child2 child2 = new Child2();
+            IBase iBase = child2;
 
-            //Console.WriteLine();
+            Console.WriteLine();
 
-            //iBase.GetMesage();
-            //iBase.ShowMessage();
-            //iBase.ShowMessage1();
-            //a = iBase.MyProperty;
-            //iBase.MyProperty = a;
+            iBase.GetMesage();
+            iBase.ShowMessage();
+            iBase.ShowMessage1();
+            a = iBase.MyProperty;
+            iBase.MyProperty = a;
 
-            //Console.WriteLine();
+            Console.WriteLine();
 
 
 
@@ -248,18 +279,18 @@ Tis is : Child2 :: SetProprety : new :
 
 
            */
-            //  Child3 iBase = new Child3();
+            //Child3 iBase = new Child3();
             ////  IBase iBase = child1;
 
-            //  Console.WriteLine();
+            //Console.WriteLine();
 
-            //  iBase.GetMesage();
-            //  iBase.ShowMessage();
-            //  iBase.ShowMessage1();
-            //  a = iBase.MyProperty;
-            //  iBase.MyProperty = a;
+            //iBase.GetMesage();
+            //iBase.ShowMessage();
+            //iBase.ShowMessage1();
+            //a = iBase.MyProperty;
+            //iBase.MyProperty = a;
 
-            //  Console.WriteLine();
+            //Console.WriteLine();
 
 
 

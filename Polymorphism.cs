@@ -188,7 +188,7 @@ namespace Classes_in_C_Sharp
         }
     }
     //----------------------------------------------------------------222222222222------------------------------------------------------------------------
-  public  class Child2 : Child1 ,IBase
+  public  class Child2 : Child1 
     {
 
         Traker child2Fild = new Traker("This is : Child2 :: child2Fild :");
