@@ -21,9 +21,12 @@ namespace Classes_in_C_Sharp
     //--------------------------------------------------------------------INTERFACE----------------------------------------------------------------
     interface IBase
     {
-        void ShowMessage(string s = "This is : Base :: ShowMessage :: Overload : DefaultMessage :");
+        void ShowMessage1(string s = "This is : IBase :: ShowMessage :: Overload : DefaultMessage :");
         void ShowMessage();
         void GetMesage();
+
+
+        Traker MyProperty { get; set; }
 
     }
     //---------------------------------------------------------------BBBBAAAASSSEEEEEE-----------------------------------------------------------------
@@ -51,13 +54,13 @@ namespace Classes_in_C_Sharp
         }
 
         // Cant inhered if Defult Constructor is private or internal
-     protected   Base()
+     public  Base()
         {
                         Console.WriteLine("This is : Base :: Constructor :: ");
             baseFildReadOnly = new Traker("This is : Base :: Constructor :: baseFildReadOnly :: initialization :");
 
         }
-        protected Base(String s)
+        public Base(String s)
         {
             Thread.Sleep(400);
             Console.WriteLine(s);
@@ -73,10 +76,11 @@ namespace Classes_in_C_Sharp
                         Console.WriteLine("This is : Base :: ShowMessage ::");
         }
         //overload
-virtual public void ShowMessage(string s= "This is : Base :: ShowMessage :: Overload : DefaultMessage :")
+ public virtual void ShowMessage1(string s= "This is : Base :: ShowMessage :: Overload : DefaultMessage :")
         {
+            s = "This is : Base :: ShowMessage :: Overload : DefaultMessage :";
                         Console.WriteLine(s);
-            baseFildReadOnly.WhoIam("This is : Base :: ShowMessage :: baseFildReadOnly : ReadOnly :");
+        //    baseFildReadOnly.WhoIam("This is : Base :: ShowMessage :: baseFildReadOnly : ReadOnly :");
 
             // readonly is one per class and cant be accesed iven in same class
           //  this.baseStaticFildReadOnly.WhoIam("");
@@ -115,19 +119,19 @@ virtual public void ShowMessage(string s= "This is : Base :: ShowMessage :: Over
     //-----------------------------------------------------------------111111111111111-------------------------------------------------------------------------
   public  class Child1 : Base
     {
-        public string s;
+        //public string s;
         Traker child1Fild = new Traker("This is : Child1 :: child1Fild :");
         public readonly Traker child1FildReadOnly = new Traker("This is : Child1 :: child1FildReadOnly : ReadOnly :");
         public static readonly Traker child1StaticFildReadOnly = new Traker("This is : Child1 :: child1StaticFildReadOnly : Static : ReadOnly :");
         static Traker child1StaticFild = new Traker("This is : Child1 :: child1StaticFild : Static :");
 
-      protected  Child1(): base("Call from Child1")
+        public Child1(): base("Call from Child1")
         {
             Thread.Sleep(400);
             Console.WriteLine("This is : Child1 :: Constructor :: ");
             child1FildReadOnly = new Traker("This is : Child1 :: Constructor :: child1FildReadOnly :: initialization :");
         }
-        protected Child1(String s)
+        public Child1(String s)
         {
             Thread.Sleep(400);
             Console.WriteLine(s);
@@ -159,9 +163,9 @@ virtual public void ShowMessage(string s= "This is : Base :: ShowMessage :: Over
             Console.WriteLine("This is : Child1 :: ShowMessage :: new :");
         }
 
-         public override void ShowMessage(string s = "This is : Child1 :: ShowMessage :: Overload : override : DefaultMessage :")
+         public override void ShowMessage1(string s = "This is : Child1 :: ShowMessage :: Overload : override : DefaultMessage :")
         {
-            Thread.Sleep(400);
+            s = "This is : Child1 :: ShowMessage :: Overload : override : DefaultMessage :";
             Console.WriteLine(s);
 
         }
@@ -180,6 +184,7 @@ virtual public void ShowMessage(string s= "This is : Base :: ShowMessage :: Over
         {
             Console.WriteLine("This is : Child1 :: Distructor :");
             Thread.Sleep(2000);
+          
         }
     }
     //----------------------------------------------------------------222222222222------------------------------------------------------------------------
@@ -187,20 +192,20 @@ virtual public void ShowMessage(string s= "This is : Base :: ShowMessage :: Over
     {
 
         Traker child2Fild = new Traker("This is : Child2 :: child2Fild :");
-      static  Traker child2StaticFild = new Traker("This is : Child2 :: child2StaticFild :");
+      static  Traker child2StaticFild = new Traker("This is : Child2 :: child2StaticFild : static :");
 
-        protected  Child2(): base ("Call from Child2")
+        public Child2(): base ("Call from Child2")
         {
             Thread.Sleep(400);
             Console.WriteLine("This is : Child2 :: Constructor :: ");
 
         }
-        protected Child2(String s)
+        public Child2(String s)
         {
             Thread.Sleep(400);
             Console.WriteLine(s);
         }
-        static Child2()
+         static Child2()
         {
             Thread.Sleep(400);
             Console.WriteLine("This is : Child2 :: Constructor :: Static :");
@@ -225,14 +230,15 @@ virtual public void ShowMessage(string s= "This is : Base :: ShowMessage :: Over
             Console.WriteLine("This is : Child2 :: ShowMessage :: new : Virtual :");
         }
 
-        public override void ShowMessage(string s = "This is : Child2 :: ShowMessage :: Overload : override : DefaultMessage :")
+        public override void ShowMessage1(string s = "This is : Child2 :: ShowMessage :: Overload : override : DefaultMessage :")
         {
+            s = "This is : Child2 :: ShowMessage :: Overload : override : DefaultMessage :";
             Thread.Sleep(400);
-            Console.WriteLine(s);
+            Console.WriteLine(s+"yffjfkk");
 
         }
 
-        override public void GetMesage()
+         public override void GetMesage()
         {
             Thread.Sleep(400);
             Console.WriteLine("This is : Child2 :: GetMessage :override :");
@@ -254,9 +260,9 @@ virtual public void ShowMessage(string s= "This is : Base :: ShowMessage :: Over
     {
         
              Traker child2Fild = new Traker("This is : Child3 :: child3Fild :");
-static Traker child2StaticFild = new Traker("This is : Child3 :: child3Fild :");
+static Traker child2StaticFild = new Traker("This is : Child3 :: child3Fild : static :");
 
-        protected Child3() :           base("Call from Child3")
+        public Child3() :           base("Call from Child3")
         {
                            Console.WriteLine("This is : Child3 :: Constructor :: "); 
 
@@ -287,14 +293,15 @@ static Traker child2StaticFild = new Traker("This is : Child3 :: child3Fild :");
                             Console.WriteLine("This is : Child3 :: ShowMessage :: override : Virtual :");
         }
 
-        public new void ShowMessage(string s = "This is : Child3 :: ShowMessage :: Overload : new : DefaultMessage :")
+        public new void ShowMessage1(string s = "This is : Child3 :: ShowMessage :: Overload : new : DefaultMessage :")
         {
+            s = "This is : Child3 :: ShowMessage :: Overload : new : DefaultMessage :";
             Thread.Sleep(400);
             Console.WriteLine(s);
 
         }
 
-        new public void GetMesage()
+         public new void GetMesage()
         {
             Thread.Sleep(400);
                              Console.WriteLine("This is : Child3 :: GetMessage :new :");
